@@ -6,12 +6,16 @@ var pos2_before = 0;
 var second = 0.0;
 var s = 0.0;
 var inter;
+var audio;
+var flag = 0;
 
 dragElement(document.getElementById("object"));
 
 document.querySelector('body').addEventListener('mousemove', eyeball);
 
 function eyeball(){
+  // console.log(audio)
+  // audio.play();
   var eye1 = document.querySelectorAll('.eye1');
   eye1.forEach(function(eye1){
     let x = (eye1.getBoundingClientRect().left) + (eye1.clientWidth / 2);
@@ -149,6 +153,13 @@ function countTimer(){
   document.getElementById("timer1").innerHTML = s;
 }
 
+function loadAudio(){
+  flag = 1;
+  audio = document.getElementById("angerAudio");
+  audio.autoplay = true;
+  audio.play();
+}
+
 function posChecker(pos1, pos2){
   if(pos1_before != pos1 || pos2_before != pos2){
     angryCounter = angryCounter + 1
@@ -156,6 +167,9 @@ function posChecker(pos1, pos2){
   pos1_before = pos1;
   pos2_before = pos2;
   if(angryCounter >= 20){
+    if(flag == 0){
+      loadAudio();
+    }
     document.body.style.backgroundColor = "#5c6d70";  
     // document.getElementById("timer1").style.display = "inline";
     document.getElementById("brow1").style.transform = "rotate(20deg)";
@@ -174,6 +188,8 @@ function posChecker(pos1, pos2){
     document.getElementById("brow2").style.transform = "rotate(0deg)";
     document.getElementById("mouth1").style.width  = "6vw";
     document.getElementById("mouth1").style.borderRadius  = "12%";
+    flag = 0;
+    audio.pause();
   }
 
   if(angryCounter > 0){
