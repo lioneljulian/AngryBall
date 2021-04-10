@@ -9,6 +9,10 @@ var inter;
 var audio;
 var flag = 0;
 
+window.onload = function() {
+    document.getElementById("angerAudio").pause();
+}
+
 dragElement(document.getElementById("object"));
 
 document.querySelector('body').addEventListener('mousemove', eyeball);
