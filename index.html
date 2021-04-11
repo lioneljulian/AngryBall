@@ -6,29 +6,30 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<audio id="angerAudio" controls loop>
-	  <!-- <source src="angry.ogg" type="audio/ogg"> -->
-	  <source src="angry.mp3" type="audio/mpeg">
-	</audio>
+	<div class="wrapper">
+		<audio id="angerAudio" controls loop>
+		  <source src="angry.mp3" type="audio/mpeg">
+		</audio>
 
-	<img src="title.png" class="judul">
-	<div class="timer" id="timer1">
-		0
-	</div>
-	<div class="ball" id="object">
-		<div class="grid-container">
-		  <div class="grid-item">
-		  	<div class="eyebrow1" id="brow1"></div>
-			<div class="eyebrow2" id="brow2"></div>
-		  </div>
-		  <div class="grid-item">
-		  	<div class="eye1"></div>
-			<div class="eye2"></div>
-		  </div>
+		<img src="title.png" class="judul">
+		<div class="timer" id="timer1">
+			0
 		</div>
-		<div class="grid-item-2">
-			<div class="mouth" id="mouth1"></div>
-		</div> 
+		<div class="ball" id="object">
+			<div class="grid-container">
+			  <div class="grid-item">
+			  	<div class="eyebrow1" id="brow1"></div>
+				<div class="eyebrow2" id="brow2"></div>
+			  </div>
+			  <div class="grid-item">
+			  	<div class="eye1"></div>
+				<div class="eye2"></div>
+			  </div>
+			</div>
+			<div class="grid-item-2">
+				<div class="mouth" id="mouth1"></div>
+			</div> 
+		</div>
 	</div>
 	<script type="text/javascript" src="animate.js"></script>
 </body>
